@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Garden style placeholder image</title>
+  <desc id="desc">Soft green hills, sky, and warm sunlight illustration placeholder.</desc>
+  <rect width="1600" height="900" fill="#FAFBF7"/>
+  <rect y="560" width="1600" height="340" fill="#DDEBDD"/>
+  <ellipse cx="320" cy="640" rx="430" ry="190" fill="#B9DDF2" opacity="0.5"/>
+  <ellipse cx="900" cy="620" rx="520" ry="220" fill="#8FBF9F" opacity="0.6"/>
+  <ellipse cx="1380" cy="700" rx="360" ry="180" fill="#477A5B" opacity="0.55"/>
+  <circle cx="1320" cy="170" r="66" fill="#F4D98B"/>
+  <rect x="100" y="120" width="640" height="18" rx="9" fill="#7B877F" opacity="0.22"/>
+  <rect x="100" y="156" width="500" height="14" rx="7" fill="#7B877F" opacity="0.18"/>
+</svg>
