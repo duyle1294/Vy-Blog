@@ -23,7 +23,7 @@ useSeoMeta({
     <section class="about-hero" aria-labelledby="about-title">
       <div v-reveal class="about-hero__art">
         <span class="about-hero__blob" aria-hidden="true" />
-        <img src="/images/vy-portrait.png" alt="Line illustration of Vy" />
+        <img src="/images/loading-avatar.png" alt="Line illustration of Vy" />
       </div>
 
       <div v-reveal="150" class="about-hero__copy">
@@ -102,7 +102,7 @@ useSeoMeta({
   align-items: center;
   padding: clamp(1.25rem, 3vw, 2.5rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, #eef5e9, #e6f2f9);
+  background: linear-gradient(160deg, var(--color-tint-2), var(--color-sky-tint));
 }
 
 .about-hero__art {
@@ -116,7 +116,7 @@ useSeoMeta({
   position: absolute;
   inset: 6% 8% 0;
   border-radius: 48% 52% 44% 56% / 55% 45% 55% 45%;
-  background: rgb(255 255 255 / 65%);
+  background: color-mix(in srgb, var(--color-surface) 65%, transparent);
   animation: blob 12s ease-in-out infinite alternate;
 }
 
@@ -153,7 +153,7 @@ useSeoMeta({
 .about-hero__chips li {
   padding: 0.3rem 0.85rem;
   border-radius: 999px;
-  background: rgb(255 255 255 / 80%);
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent);
   color: var(--color-primary);
   font-size: 0.85rem;
   font-weight: 500;
@@ -281,7 +281,7 @@ useSeoMeta({
   gap: 1rem;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   border-radius: var(--radius-lg);
-  background: #eaf3e6;
+  background: var(--color-tint-2);
 }
 
 .about-cta h2 {

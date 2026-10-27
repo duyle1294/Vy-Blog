@@ -33,7 +33,7 @@ onMounted(() => {
 
     <div class="loader__card">
       <div class="loader__ring" aria-hidden="true">
-        <img src="/images/vy-portrait.png" alt="" class="loader__portrait" />
+        <img src="/images/loading-avatar.png" alt="" class="loader__portrait" />
       </div>
       <p class="loader__title">Vy’s World</p>
       <p class="loader__text">Watering the garden<span class="loader__dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span></p>
@@ -56,7 +56,7 @@ onMounted(() => {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: linear-gradient(160deg, #fffbe9 0%, #e9f6e8 50%, #d9eefa 100%);
+  background: linear-gradient(160deg, var(--color-warm-tint) 0%, var(--color-tint-2) 50%, var(--color-sky-tint) 100%);
   transition: opacity 600ms ease, transform 600ms var(--ease-soft, ease), visibility 600ms;
 }
 
@@ -74,19 +74,20 @@ onMounted(() => {
   animation: loader-blob 7s ease-in-out infinite alternate;
 }
 
-.loader__blob--1 { width: 38vmax; height: 38vmax; top: -10vmax; left: -8vmax; background: #f4d98b66; }
-.loader__blob--2 { width: 34vmax; height: 34vmax; bottom: -12vmax; right: -8vmax; background: #b9ddf288; animation-delay: -2s; }
-.loader__blob--3 { width: 22vmax; height: 22vmax; bottom: 10vmax; left: 8vmax; background: #8fbf9f55; animation-delay: -4s; }
+.loader__blob--1 { width: 38vmax; height: 38vmax; top: -10vmax; left: -8vmax; background: color-mix(in srgb, var(--color-accent-warm) 40%, transparent); }
+.loader__blob--2 { width: 34vmax; height: 34vmax; bottom: -12vmax; right: -8vmax; background: color-mix(in srgb, var(--color-accent-sky) 53%, transparent); animation-delay: -2s; }
+.loader__blob--3 { width: 22vmax; height: 22vmax; bottom: 10vmax; left: 8vmax; background: color-mix(in srgb, var(--color-primary-soft) 33%, transparent); animation-delay: -4s; }
 
 .loader__card {
   position: relative;
   display: grid;
   justify-items: center;
-  gap: 0.5rem;
-  padding: 2rem 2.5rem;
-  border-radius: 2rem;
-  background: rgb(255 255 255 / 70%);
-  box-shadow: 0 18px 50px rgb(71 122 91 / 18%);
+  gap: 0.75rem;
+  width: min(30rem, calc(100vw - 2rem));
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3.5rem);
+  border-radius: 2.5rem;
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--color-primary) 18%, transparent);
   backdrop-filter: blur(6px);
   animation: loader-pop 700ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
@@ -94,26 +95,26 @@ onMounted(() => {
 .loader__ring {
   position: relative;
   display: grid;
-  width: 132px;
-  height: 132px;
+  width: clamp(180px, 32vw, 240px);
+  height: clamp(180px, 32vw, 240px);
   place-items: center;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, #8fbf9f, #f4d98b, #b9ddf2, #f7b4a2, #8fbf9f);
+  background: conic-gradient(from 0deg, var(--color-primary-soft), var(--color-accent-warm), var(--color-accent-sky), var(--color-accent-coral), var(--color-primary-soft));
   animation: loader-spin 3.2s linear infinite;
 }
 
 .loader__ring::before {
   position: absolute;
-  inset: 6px;
+  inset: 8px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color-surface);
   content: '';
 }
 
 .loader__portrait {
   position: relative;
-  width: 88px;
-  height: 88px;
+  width: 78%;
+  height: 78%;
   object-fit: contain;
   mix-blend-mode: multiply;
   /* counter-rotate so the portrait stays upright while the ring spins */
@@ -121,17 +122,17 @@ onMounted(() => {
 }
 
 .loader__title {
-  margin: 0.6rem 0 0;
-  color: #477a5b;
+  margin: 0.9rem 0 0;
+  color: var(--color-primary);
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: clamp(2rem, 5vw, 2.6rem);
   font-weight: 600;
 }
 
 .loader__text {
   margin: 0;
-  color: #6f7c74;
-  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
 }
 
 .loader__dots i {
@@ -144,12 +145,12 @@ onMounted(() => {
 .loader__dots i:nth-child(3) { animation-delay: 0.4s; }
 
 .loader__bar {
-  width: 150px;
-  height: 8px;
-  margin-top: 0.6rem;
+  width: min(260px, 80%);
+  height: 10px;
+  margin-top: 1rem;
   overflow: hidden;
   border-radius: 999px;
-  background: #e4efe3;
+  background: var(--color-tint);
 }
 
 .loader__bar span {
@@ -157,7 +158,7 @@ onMounted(() => {
   width: 40%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #8fbf9f, #f4d98b, #f7b4a2);
+  background: linear-gradient(90deg, var(--color-primary-soft), var(--color-accent-warm), var(--color-accent-coral));
   animation: loader-bar 1.4s ease-in-out infinite;
 }
 

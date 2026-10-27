@@ -116,7 +116,7 @@ useSeoMeta({
   margin: 0;
   padding: 0.22rem 0.65rem;
   border-radius: 999px;
-  background: #e7f0e6;
+  background: var(--color-tint);
   color: var(--color-primary);
   font-size: 0.72rem;
   font-weight: 700;

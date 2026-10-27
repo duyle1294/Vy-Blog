@@ -99,7 +99,7 @@ function showDemoNotice() {
 .contact-page__intro::before {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(250 251 247 / 35%), rgb(250 251 247 / 80%));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 35%, transparent), color-mix(in srgb, var(--color-bg) 80%, transparent));
   content: '';
 }
 
@@ -115,7 +115,7 @@ function showDemoNotice() {
   width: 16rem;
   height: 16rem;
   border-radius: 50%;
-  background: rgb(143 191 159 / 18%);
+  background: color-mix(in srgb, var(--color-primary-soft) 18%, transparent);
   content: '';
 }
 

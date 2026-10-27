@@ -1,0 +1,103 @@
+/*
+ * THEME TOKENS — the single place to change colors.
+ *
+ * Every component reads these CSS variables (var(--color-*)).
+ * To tweak a theme, edit its values below. To add a theme:
+ *   1. Copy a [data-theme] block and change the name + values.
+ *   2. Add the same name to THEMES in app/composables/useTheme.ts.
+ *
+ * Token guide
+ *   bg / surface / surface-muted : page, card and soft-section backgrounds
+ *   border                       : dividers and outlines
+ *   text / text-muted            : primary and secondary text
+ *   primary(-dark/-soft)         : brand color, hover state, light brand tint
+ *   accent-sky / -warm / -coral  : supporting accents
+ *   tint / tint-2                : chip, footer and soft-fill backgrounds
+ *   sky-tint / warm-tint         : pale blue and pale yellow fills
+ *   pin                          : map pins / route accent
+ */
+
+/* 1. Garden (default) */
+:root,
+:root[data-theme='garden'] {
+  --color-bg: #fbfef7;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f8ea;
+  --color-border: #d7ebd5;
+  --color-text: #36493e;
+  --color-text-muted: #66786d;
+  --color-primary: #3d8a5f;
+  --color-primary-dark: #2f7650;
+  --color-primary-soft: #9ad3a8;
+  --color-accent-sky: #b5e1f8;
+  --color-accent-warm: #fbe28a;
+  --color-accent-coral: #f4a672;
+  --color-tint: #dff3df;
+  --color-tint-2: #e6f6e3;
+  --color-sky-tint: #e6f2f9;
+  --color-warm-tint: #fffbe9;
+  --color-pin: #ef6e62;
+}
+
+/* 2. Pastel */
+:root[data-theme='pastel'] {
+  --color-bg: #fff8fb;
+  --color-surface: #ffffff;
+  --color-surface-muted: #fdeef5;
+  --color-border: #f3d9e6;
+  --color-text: #5b4a5e;
+  --color-text-muted: #86748b;
+  --color-primary: #9c64b0;
+  --color-primary-dark: #82509a;
+  --color-primary-soft: #d9b8e6;
+  --color-accent-sky: #bfe3f7;
+  --color-accent-warm: #ffe6a8;
+  --color-accent-coral: #ffb3a7;
+  --color-tint: #f6e6fa;
+  --color-tint-2: #fdeaf1;
+  --color-sky-tint: #e6f3fb;
+  --color-warm-tint: #fff6df;
+  --color-pin: #ff7a90;
+}
+
+/* 3. Inspired by Nature */
+:root[data-theme='nature'] {
+  --color-bg: #f6f4ea;
+  --color-surface: #fffdf6;
+  --color-surface-muted: #ebeedd;
+  --color-border: #d3d9bd;
+  --color-text: #2f3a28;
+  --color-text-muted: #5b6850;
+  --color-primary: #4a6b2f;
+  --color-primary-dark: #365020;
+  --color-primary-soft: #a3b87c;
+  --color-accent-sky: #a9cbd6;
+  --color-accent-warm: #d9b36a;
+  --color-accent-coral: #c98a5a;
+  --color-tint: #e1e8cc;
+  --color-tint-2: #e8edd6;
+  --color-sky-tint: #dfeaea;
+  --color-warm-tint: #f2ead2;
+  --color-pin: #b8532f;
+}
+
+/* 4. Retro / Vintage */
+:root[data-theme='retro'] {
+  --color-bg: #f7ecd9;
+  --color-surface: #fff7e8;
+  --color-surface-muted: #f0e0c3;
+  --color-border: #dcc6a0;
+  --color-text: #4a3426;
+  --color-text-muted: #75604d;
+  --color-primary: #b5532f;
+  --color-primary-dark: #8f3f20;
+  --color-primary-soft: #e0a96d;
+  --color-accent-sky: #8fb8b5;
+  --color-accent-warm: #e9b949;
+  --color-accent-coral: #d9794f;
+  --color-tint: #f2dcb9;
+  --color-tint-2: #efdcbc;
+  --color-sky-tint: #dbe6dc;
+  --color-warm-tint: #f5e2b8;
+  --color-pin: #c0392b;
+}

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MobileNavigation from '~/components/layout/MobileNavigation.vue'
+import ThemeSwitcher from '~/components/layout/ThemeSwitcher.vue'
 import { PRIMARY_NAVIGATION } from '~/data/categories'
 import type { NavigationItem } from '~/types/content'
 
@@ -76,16 +77,19 @@ onBeforeUnmount(() => {
         </ul>
       </nav>
 
-      <button
-        type="button"
-        class="site-header__menu-button"
-        :aria-expanded="isMenuOpen"
-        aria-controls="primary-mobile-nav"
-        :aria-label="isMenuOpen ? 'Close menu' : 'Open menu'"
-        @click="toggleMenu"
-      >
-        {{ isMenuOpen ? 'Close' : 'Menu' }}
-      </button>
+      <div class="site-header__actions">
+        <ThemeSwitcher />
+        <button
+          type="button"
+          class="site-header__menu-button"
+          :aria-expanded="isMenuOpen"
+          aria-controls="primary-mobile-nav"
+          :aria-label="isMenuOpen ? 'Close menu' : 'Open menu'"
+          @click="toggleMenu"
+        >
+          {{ isMenuOpen ? 'Close' : 'Menu' }}
+        </button>
+      </div>
     </div>
 
     <div class="page-container" v-if="isMenuOpen">

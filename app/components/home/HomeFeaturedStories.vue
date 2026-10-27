@@ -9,8 +9,8 @@ defineProps<{
 <template>
   <section aria-labelledby="home-featured-title" class="space-y-4">
     <div class="flex items-end justify-between gap-4">
-      <h2 id="home-featured-title" class="text-2xl font-semibold text-[#34443a] md:text-3xl">Featured stories</h2>
-      <NuxtLink to="/blog" class="text-sm font-semibold text-[#477a5b] hover:underline">View all</NuxtLink>
+      <h2 id="home-featured-title" class="text-2xl font-semibold text-[color:var(--color-text)] md:text-3xl">Featured stories</h2>
+      <NuxtLink to="/blog" class="text-sm font-semibold text-[color:var(--color-primary)] hover:underline">View all</NuxtLink>
     </div>
 
     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

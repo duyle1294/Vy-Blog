@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CATEGORIES } from '~/data/categories'
 import { PROFILE } from '~/data/profile'
+import ThemeSwitcher from '~/components/layout/ThemeSwitcher.vue'
 import { DUMMY_IMAGES, pickDummyImage } from '~/data/images'
 import { formatDate, getFeaturedPosts } from '~/utils/content'
 import type { CategorySlug } from '~/types/content'
@@ -136,6 +137,7 @@ useSeoMeta({
             {{ item.label }}
           </NuxtLink>
         </nav>
+        <ThemeSwitcher class="hero-theme" />
       </header>
 
       <div class="hero-content">
@@ -420,7 +422,7 @@ useSeoMeta({
 
 .eyebrow {
   margin: 0 0 0.5rem;
-  color: #477a5b;
+  color: var(--color-primary);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.13em;
@@ -429,7 +431,7 @@ useSeoMeta({
 
 .display {
   margin: 0;
-  color: #344b3b;
+  color: var(--color-text);
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   line-height: 1.15;
@@ -440,7 +442,7 @@ useSeoMeta({
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #477a5b;
+  color: var(--color-primary);
   font-weight: 700;
   text-decoration: none;
   transition: gap 0.2s ease;
@@ -456,9 +458,9 @@ useSeoMeta({
   justify-content: center;
   min-height: 48px;
   padding: 0 22px;
-  border: 1px solid #477a5b;
+  border: 1px solid var(--color-primary);
   border-radius: 999px;
-  background: #477a5b;
+  background: var(--color-primary);
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -466,8 +468,8 @@ useSeoMeta({
 }
 
 .button--light {
-  background: #fffefa;
-  color: #477a5b;
+  background: var(--color-surface);
+  color: var(--color-primary);
 }
 
 .hero-board {
@@ -476,7 +478,7 @@ useSeoMeta({
   min-height: 960px;
   overflow: hidden;
   border-radius: 28px;
-  background: #eef3e4;
+  background: var(--color-tint-2);
 }
 
 .hero-board-bg {
@@ -510,9 +512,9 @@ useSeoMeta({
 .hero-brand {
   padding: 8px 22px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 6px 18px rgba(52, 68, 58, 0.12);
-  color: #344b3b;
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-text) 12%, transparent);
+  color: var(--color-text);
   font-family: var(--font-display);
   font-size: 25px;
   line-height: 1;
@@ -533,14 +535,14 @@ useSeoMeta({
 }
 
 .hero-nav a {
-  color: #ffffff;
+  color: var(--color-surface);
   text-decoration: none;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-nav a:hover,
 .hero-nav a.is-active {
-  color: #f4d98b;
+  color: var(--color-accent-warm);
 }
 
 .hero-menu-toggle {
@@ -548,9 +550,9 @@ useSeoMeta({
   width: 42px;
   height: 42px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid color-mix(in srgb, var(--color-surface) 70%, transparent);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.82);
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
 }
 
 .hero-menu-toggle i {
@@ -558,7 +560,7 @@ useSeoMeta({
   width: 19px;
   height: 1.5px;
   margin: 5px auto;
-  background: #344b3b;
+  background: var(--color-text);
 }
 
 .hero-content {
@@ -587,12 +589,12 @@ useSeoMeta({
   right: calc(4% + 18px);
   bottom: 18%;
   margin: 0;
-  color: #0f3125;
+  color: var(--color-text);
   font-family: 'Caveat', cursive;
   font-size: clamp(20px, 2.4vw, 30px);
   line-height: 1;
   letter-spacing: 0.01em;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.25);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--color-surface) 25%, transparent);
 }
 
 .wind-word {
@@ -604,7 +606,7 @@ useSeoMeta({
 }
 
 .wind-word--accent {
-  color: #f4d98b;
+  color: var(--color-accent-warm);
 }
 
 @keyframes wind-sway {
@@ -622,7 +624,7 @@ useSeoMeta({
   align-items: center;
   gap: 9px;
   margin-top: clamp(20px, 4vw, 46px);
-  color: #344b3b;
+  color: var(--color-text);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -631,7 +633,7 @@ useSeoMeta({
 
 .scroll-note::after {
   content: '→';
-  color: #ef6e62;
+  color: var(--color-pin);
   font-size: 18px;
 }
 
@@ -643,7 +645,7 @@ useSeoMeta({
   margin-inline: auto;
   border-radius: 0;
   border: 0;
-  background: #f5f2e9;
+  background: var(--color-warm-tint);
   box-shadow: none;
   overflow: hidden;
 }
@@ -651,7 +653,7 @@ useSeoMeta({
 .board-section {
   position: relative;
   z-index: 5;
-  margin-top: -24px;
+  margin-top: -42px;
   padding: 0;
 }
 
@@ -675,7 +677,7 @@ useSeoMeta({
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  color: #344b3b;
+  color: var(--color-text);
   font-size: clamp(11px, 1.2vw, 14px);
   letter-spacing: 0.08em;
 }
@@ -688,7 +690,7 @@ useSeoMeta({
   transform: translateX(-50%);
   margin: 0;
   width: 100%;
-  color: #344b3b;
+  color: var(--color-text);
   text-align: center;
   font-family: 'Caveat', cursive;
   font-size: clamp(40px, 5.4vw, 66px);
@@ -701,7 +703,7 @@ useSeoMeta({
   z-index: 2;
   top: 18%;
   left: 50%;
-  color: #477a5b;
+  color: var(--color-primary);
   font-size: clamp(24px, 3.8vw, 48px);
   transform: translateX(-50%) rotate(8deg);
   animation: board-float 5s ease-in-out infinite;
@@ -728,7 +730,7 @@ useSeoMeta({
 
 .board-path path {
   fill: none;
-  stroke: #e88b83;
+  stroke: var(--color-pin);
   stroke-width: 1.5;
   stroke-dasharray: 2 3;
   stroke-linecap: round;
@@ -753,7 +755,7 @@ useSeoMeta({
   flex-direction: column;
   align-items: center;
   width: min(238px, 22vw);
-  color: #344b3b;
+  color: var(--color-text);
   text-align: center;
   text-decoration: none;
   transform: translate(-50%, -84%);
@@ -806,7 +808,7 @@ useSeoMeta({
   overflow: hidden;
   border: 7px solid #fff;
   border-radius: 18px;
-  box-shadow: 0 12px 20px rgba(52, 68, 58, 0.2);
+  box-shadow: 0 12px 20px color-mix(in srgb, var(--color-text) 20%, transparent);
   transform: rotate(-4deg);
 }
 
@@ -830,8 +832,8 @@ useSeoMeta({
   margin-top: 8px;
   padding: 6px 10px;
   border-radius: 12px;
-  background: rgba(255, 252, 247, 0.93);
-  box-shadow: 0 6px 12px rgba(52, 68, 58, 0.12);
+  background: color-mix(in srgb, var(--color-surface) 93%, transparent);
+  box-shadow: 0 6px 12px color-mix(in srgb, var(--color-text) 12%, transparent);
 }
 
 .board-label {
@@ -839,13 +841,13 @@ useSeoMeta({
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #284a3d;
+  color: var(--color-text);
 }
 
 .board-desc {
   font-size: clamp(10px, 0.9vw, 12px);
   line-height: 1.25;
-  color: #486257;
+  color: var(--color-text);
 }
 
 .welcome {
@@ -860,7 +862,7 @@ useSeoMeta({
   position: relative;
   overflow: hidden;
   border-radius: 28px;
-  background: #e8f4fa;
+  background: var(--color-sky-tint);
   box-shadow: var(--shadow-soft);
 }
 
@@ -955,7 +957,7 @@ useSeoMeta({
   position: absolute;
   inset: 18% 8% 0 0;
   border-radius: 48% 52% 44% 56% / 55% 45% 55% 45%;
-  background: linear-gradient(160deg, #f4f8fd, #e8f6dd 90%);
+  background: linear-gradient(160deg, var(--color-sky-tint), var(--color-tint-2) 90%);
   animation: blob 12s ease-in-out infinite alternate;
 }
 
@@ -1047,7 +1049,7 @@ useSeoMeta({
   aspect-ratio: 1.45 / 1;
   overflow: hidden;
   border-radius: 12px;
-  background: #d9ead9;
+  background: var(--color-tint);
 }
 
 .post-image img {
@@ -1079,7 +1081,7 @@ useSeoMeta({
 
 .post-excerpt {
   margin: 13px 0 18px;
-  color: #718075;
+  color: var(--color-text-muted);
   font-size: 14px;
 }
 
@@ -1087,12 +1089,12 @@ useSeoMeta({
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  color: #718075;
+  color: var(--color-text-muted);
   font-size: 12px;
 }
 
 .post-meta a {
-  color: #477a5b;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -1141,7 +1143,7 @@ useSeoMeta({
   flex: 0 0 34px;
   place-items: center;
   border-radius: 50%;
-  background: #e4efe3;
+  background: var(--color-tint);
   color: var(--color-primary);
   font-size: 1rem;
 }
@@ -1207,7 +1209,7 @@ useSeoMeta({
 .about-preview p {
   max-width: 460px;
   margin: 20px 0 30px;
-  color: #718075;
+  color: var(--color-text-muted);
   font-size: 18px;
 }
 
@@ -1217,13 +1219,13 @@ useSeoMeta({
 }
 
 .contact-cta .display {
-  color: #344b3b;
+  color: var(--color-text);
 }
 
 .contact-cta p {
   max-width: 460px;
   margin: 20px auto 30px;
-  color: #34443a;
+  color: var(--color-text);
 }
 
 @media (max-width: 1023px) {
@@ -1250,7 +1252,7 @@ useSeoMeta({
     gap: 10px;
     padding: 14px;
     border-radius: 14px;
-    background: rgba(43, 66, 54, 0.9);
+    background: color-mix(in srgb, var(--color-text) 90%, transparent);
   }
 
   .hero-nav.is-open {

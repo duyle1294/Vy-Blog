@@ -223,7 +223,7 @@ useSeoMeta({
 .blog-list__banner::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgb(250 251 247 / 70%), rgb(250 251 247 / 44%));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-bg) 70%, transparent), color-mix(in srgb, var(--color-bg) 44%, transparent));
   content: '';
 }
 
@@ -351,7 +351,7 @@ useSeoMeta({
 }
 
 .blog-list__categories :deep(.category-filter__button.is-active) {
-  background: #e8f0e7;
+  background: var(--color-tint);
   color: var(--color-primary);
   font-weight: 700;
 }

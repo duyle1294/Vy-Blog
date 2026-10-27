@@ -5,20 +5,10 @@
 @tailwind utilities;
 
 :root {
+  /* Colors live in themes.css — edit them there. */
   color-scheme: light;
-  --color-bg: #fafbf7;
-  --color-surface: #fffefa;
-  --color-surface-muted: #f4f7f1;
-  --color-border: #dbe4da;
-  --color-text: #34443a;
-  --color-text-muted: #6f7c74;
-  --color-primary: #477a5b;
-  --color-primary-soft: #8fbf9f;
-  --color-accent-sky: #b9ddf2;
-  --color-accent-warm: #f4d98b;
-  --color-accent-coral: #e9a36a;
-  --shadow-soft: 0 12px 32px rgba(71, 122, 91, 0.1);
-  --shadow-card: 0 4px 18px rgba(71, 122, 91, 0.08);
+  --shadow-soft: 0 12px 32px color-mix(in srgb, var(--color-primary) 12%, transparent);
+  --shadow-card: 0 4px 18px color-mix(in srgb, var(--color-primary) 9%, transparent);
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', 'Avenir Next', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --radius-sm: 0.75rem;
@@ -71,7 +61,7 @@ a {
 }
 
 a:hover {
-  color: #3a664d;
+  color: var(--color-primary-dark);
 }
 
 a:focus-visible,
@@ -104,16 +94,16 @@ select:focus-visible {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 251, 247, 0.85);
+  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(219, 228, 218, 0.7);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
   animation: fade-down 600ms var(--ease-soft) both;
 }
 
 .site-footer {
   position: relative;
   margin-top: clamp(3rem, 6vw, 5rem);
-  background: linear-gradient(180deg, var(--color-bg) 0%, #eaf3e6 100%);
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-tint-2) 100%);
 }
 
 .site-footer::before {
@@ -191,6 +181,12 @@ select:focus-visible {
 
 .site-header__desktop-nav {
   display: none;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .site-header__nav-list {
@@ -333,7 +329,7 @@ select:focus-visible {
 }
 
 .blog-card {
-  border: 1px solid rgba(219, 228, 218, 0.7);
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
@@ -378,7 +374,7 @@ select:focus-visible {
   justify-self: start;
   padding: 0.15rem 0.7rem;
   border-radius: 999px;
-  background: #e4efe3;
+  background: var(--color-tint);
   color: var(--color-primary);
   font-size: 0.7rem;
   font-weight: 600;
@@ -472,7 +468,7 @@ select:focus-visible {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(250, 251, 247, 0.35), rgba(250, 251, 247, 0.78));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 35%, transparent), color-mix(in srgb, var(--color-bg) 78%, transparent));
 }
 
 .page-banner__copy {
