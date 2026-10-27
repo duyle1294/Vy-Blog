@@ -299,7 +299,7 @@ useSeoMeta({
 <style scoped>
 .home-shell {
   width: 100%;
-  max-width: 1520px;
+  max-width: 1420px;
   padding-inline: 20px;
   box-sizing: border-box;
   margin-inline: auto;
@@ -332,11 +332,6 @@ useSeoMeta({
 
 .scroll-note {
   animation: fade-up 900ms var(--ease-soft) 700ms both;
-}
-
-.scroll-note::after {
-  display: inline-block;
-  animation: nudge 2.4s ease-in-out infinite;
 }
 
 .hero-caption {
@@ -482,18 +477,6 @@ useSeoMeta({
   overflow: hidden;
   border-radius: 28px;
   background: #eef3e4;
-}
-
-.hero-board::after {
-  content: '';
-  position: absolute;
-  left: -2%;
-  right: -2%;
-  bottom: -42px;
-  z-index: 4;
-  height: 94px;
-  background: var(--color-bg);
-  border-radius: 58% 42% 0 0 / 100% 100% 0 0;
 }
 
 .hero-board-bg {
@@ -668,7 +651,7 @@ useSeoMeta({
 .board-section {
   position: relative;
   z-index: 5;
-  margin-top: -88px;
+  margin-top: -24px;
   padding: 0;
 }
 
@@ -970,16 +953,16 @@ useSeoMeta({
 
 .welcome-blob {
   position: absolute;
-  inset: 8% 8% 0;
+  inset: 18% 8% 0 0;
   border-radius: 48% 52% 44% 56% / 55% 45% 55% 45%;
-  background: linear-gradient(160deg, #e4efe3, #b9ddf2 90%);
+  background: linear-gradient(160deg, #f4f8fd, #e8f6dd 90%);
   animation: blob 12s ease-in-out infinite alternate;
 }
 
 .welcome-art img {
   position: relative;
   mix-blend-mode: multiply;
-  width: min(380px, 90%) !important;
+  width: min(380px, 100%) !important;
   height: auto !important;
   min-height: 0 !important;
   object-fit: contain !important;

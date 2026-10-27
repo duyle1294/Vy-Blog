@@ -1,13 +1,12 @@
 export const DUMMY_IMAGES = [
-  '/images/dummy-images/beautiful-landscape-around-lake-kawaguchiko.jpg',
-  '/images/dummy-images/lake-with-trees.jpg',
-  '/images/dummy-images/waterfall-nature-thailand.jpg'
+  '/images/dummy-images/artboard-1.png',
+  '/images/dummy-images/artboard-2.png',
+  '/images/dummy-images/artboard-3.png',
+  '/images/dummy-images/artboard-4.png',
+  '/images/dummy-images/artboard-5.png'
 ] as const
 
-/**
- * Pick a dummy image from a seed. Deterministic so SSR and client render the same
- * markup (true Math.random would cause hydration mismatches).
- */
+// Deterministic pick (same on server and client, avoids hydration mismatch).
 export function pickDummyImage(seed: string | number = 0): string {
   const key = String(seed)
   let hash = 0

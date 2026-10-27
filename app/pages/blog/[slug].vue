@@ -141,11 +141,8 @@ useSeoMeta({
 }
 
 .story-detail__cover {
-  position: relative;
-  left: 50%;
-  width: min(var(--content-max), calc(100vw - (var(--space-container) * 2)));
-  margin: 0 0 0 -50%;
-  justify-self: center;
+  width: 100%;
+  margin: 0;
   display: grid;
   gap: 0.5rem;
 }
@@ -153,7 +150,10 @@ useSeoMeta({
 .story-detail__cover img {
   display: block;
   width: 100%;
-  border-radius: var(--radius-md);
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
 }
 
 .story-detail__cover figcaption {
